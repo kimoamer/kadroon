@@ -16,7 +16,7 @@ To install Kadroon on your ERPNext site:
 
 ```bash
 # Get the app
-bench get-app https://github.com/kimoamer/kadroon.git
+bench get-app https://github.com/kimoamer/kadroon.git --resolve-deps
 
 # Install it on your site
 bench --site your-site-name install-app kadroon
