@@ -1,13 +1,11 @@
-// This file contains the updated code for the formula builder with:
-// 1. Dynamic Salary Slip fields instead of fixed ones
-// 2. Added Python-style conditional operators
-// 3. Made the interface more user-friendly
+// Copyright (c) 2025, Innomate LLC and contributors
+// For license information, please see license.txt
 
 frappe.ui.form.on('Payroll Tax System Mapper', {
     refresh: function (frm) {
         frm.add_custom_button(__('أضف الأعمدة'), function () {
             // Your data as a list of dictionaries
-            const jsonFilePath = '/assets/kadroon/data/payroll_columns_mapping.json?ver=4';
+            const jsonFilePath = '/assets/kadroon/data/payroll_columns_mapping.json?ver=1';
 
             console.log("Loading JSON from:", jsonFilePath);
 

@@ -1,3 +1,5 @@
+# Copyright (c) 2025, Innomate LLC and contributors
+# For license information, please see license.txt
 import click
 from kadroon.setup import after_install as setup
 

@@ -134,6 +134,9 @@ class MonthlyPayrollTaxSystemReport:
             
         # Get the most recent salary slip in the reporting period
         salary_slip_doc = self.get_salary_slip_for_employee(employee_id)
+
+        # Get the most recent salary structure assignment
+        salary_structure_assignment_doc = self.get_salary_structure_assignment_for_employee(employee_id)
         
         # Initialize the row with all column fieldnames
         row = {}
@@ -159,6 +162,10 @@ class MonthlyPayrollTaxSystemReport:
             elif col.source_doctype == "Salary Slip" and salary_slip_doc:
                 # Salary Slip field
                 value = self.get_field_value(salary_slip_doc, col)
+                row[field_name] = value
+            elif col.source_doctype == "Salary Structure Assignment" and salary_structure_assignment_doc:
+                # Salary Structure Assignment field
+                value = self.get_field_value(salary_structure_assignment_doc, col)
                 row[field_name] = value
             else:
                 # Other doctypes or cases
@@ -192,6 +199,35 @@ class MonthlyPayrollTaxSystemReport:
                 
         except Exception as e:
             frappe.log_error(f"Error fetching Salary Slip for {employee_id}: {str(e)}")
+            
+        return None
+    
+    def get_salary_structure_assignment_for_employee(self, employee_id):
+        """
+        Get the most recent salary structure assignment for an employee valid in the reporting period.
+        """
+        if not employee_id or not self.filters.get("to_date"):
+            return None
+            
+        try:
+            # Get the salary structure assignment valid as of the to_date
+            ssa_list = frappe.get_all(
+                "Salary Structure Assignment",
+                filters={
+                    "employee": employee_id, 
+                    "docstatus": 1,
+                    "from_date": ["<=", self.filters.get("to_date")]
+                },
+                fields=["name"],
+                order_by="from_date desc",
+                limit=1
+            )
+            
+            if ssa_list:
+                return frappe.get_doc("Salary Structure Assignment", ssa_list[0].name)
+                
+        except Exception as e:
+            frappe.log_error(f"Error fetching Salary Structure Assignment for {employee_id}: {str(e)}")
             
         return None
     

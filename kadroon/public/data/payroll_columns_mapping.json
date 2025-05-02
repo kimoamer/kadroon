@@ -44,7 +44,8 @@
     "column_name": "حالة تصريح العمل لغير المصريين",
     "code_field": "EI035",
     "source_doctype": "Employee",
-    "source_field": "work_permit_status"
+    "based_on_formula": 1,
+    "formula": "work_permit_status.split('-')[0]"
   },
   {
     "column_name": "رقم تصريح العمل",
