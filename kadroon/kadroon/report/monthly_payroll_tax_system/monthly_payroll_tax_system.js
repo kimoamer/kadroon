@@ -31,9 +31,6 @@ frappe.query_reports["Monthly Payroll Tax System"] = {
 			downloadReportWithFormat(report, "csv");
 		});
 		
-		report.page.add_inner_button(__("Download Excel"), function() {
-			downloadReportWithFormat(report, "xlsx");
-		});
 	}
 };
 

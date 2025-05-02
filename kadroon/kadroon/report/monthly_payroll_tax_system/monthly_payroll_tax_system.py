@@ -8,7 +8,6 @@ from frappe.utils import cstr, getdate, formatdate
 import csv
 import io
 import os
-# import xlsxwriter
 from frappe.utils.file_manager import save_file
 
 class MonthlyPayrollTaxSystemReport:
@@ -596,10 +595,10 @@ def save_temp_file(filename, content):
     file_doc = save_file(
         fname=filename,
         content=content,
-        dt="Monthly Payroll Tax System",  # Related doctype
-        dn="Report",  # Related docname
+        dt="",  # Related doctype
+        dn="",  # Related docname
         folder="Home/Attachments",  # Folder path
-        is_private=0  # Public file
+        is_private=1  # Public file
     )
     
     # Return the file URL
