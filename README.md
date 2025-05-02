@@ -1,14 +1,14 @@
 # Kadroon
 
-**Kadroon** is a custom ERPNext app that adds official Egpytian Income Taxes fields to the Employee doctype, based on offical templates and government reporting standards. Designed for HR teams and payroll administrators who need standardized, compliant employee data structures.
+**Kadroon** is a specialized ERPNext application that enhances HR compliance for Egyptian private-sector payroll. It adds standardized custom fields to the Employee doctype based on official Egyptian government templates and reporting standards. Designed for HR teams and payroll administrators who need structured, compliant employee data management.
 
 ## 📌 Features
 
-- Adds structured custom fields to the Employee doctype.
-- Fields follow Private Sector payroll templates and codes (e.g., `EI010`, `NAD635`).
-- Arabic labels with mapped fieldnames for easy form matching.
-- Ready for integration with government reporting formats.
-
+- **Standardized Custom Fields**: Adds structured custom fields to the Employee doctype following Egyptian tax and payroll requirements
+- **Official Compliance**: Fields follow Private Sector payroll templates and codes (e.g., `EI010`, `NAD635`)
+- **Bilingual Support**: Arabic labels with mapped English fieldnames for easy form matching and data entry
+- **Government Integration Ready**: Prepared for integration with Egyptian government reporting formats
+- **Seamless ERPNext Integration**: Works within your existing ERPNext environment without disrupting core functionality
 
 ## 🚀 Installation
 
@@ -24,24 +24,28 @@ bench --site your-site-name install-app kadroon
 
 > ⚠️ Kadroon requires ERPNext & Frappe HR to be installed on the site.
 
-## 🧩 Usage
+## 🔧 Configuration
 
-After installation, Kadroon will automatically add custom fields to the **Employee** doctype.
+After installation, Kadroon automatically adds the required custom fields to the Employee doctype. No additional configuration is needed to start using the fields.
 
-You can:
-- View and manage the fields under **Customize Form** > Employee
-- Use them in reports, scripts, or custom print formats
-- Export official forms easily with aligned data structure
+1. Navigate to the Employee doctype in your ERPNext instance
+2. You'll find a new "Taxation" tab containing all the Egyptian tax-related fields
+3. Fill in the required information for each employee
 
-## 🗂️ Example Fields
+## 💼 Usage
 
-| Field Label (Arabic)                       | Fieldname | Description                                      |
-|-------------------------------------------|-----------|--------------------------------------------------|
-| الجنسية                                    | nationality     | Nationality                                      |
-| الرقم القومي                                | nationa_id     | National ID Number                               |
-| رقم تصريح العمل                           | work_permit_number    | Work Permit Number                              |
-| رقم جواز السفر          | passport_number    | Passport Number           |
-| حالة تصريح العمل لغير المصريين                 | work_permit_status    | Work Permit Status                     |
+Kadroon enhances your Employee records with fields required for Egyptian tax compliance:
+
+- **Basic Tax Information**: Nationality, contract type, and tax identification details
+- **Standardized Codes**: Uses official Egyptian government field codes for consistency
+- **Reporting Ready**: Structured data format compatible with government reporting requirements
+
+### Example Fields
+
+- Nationality (مصرى/اجنبى)
+- Contract Type (بعقد/بدون عقد/عمالة يومية)
+- Tax Registration Number
+- Additional standardized fields following Egyptian payroll requirements
 
 ## ✅ Compatibility
 
@@ -51,12 +55,20 @@ You can:
 
 ## 🤝 Contributing
 
-Contributions, issues, and suggestions are welcome! Please open an issue or fork the repo and submit a pull request.
+Contributions are welcome! If you'd like to improve Kadroon:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## 📄 License
 
-This project is licensed under the MIT License. See the [LICENSE](license.txt) file for details.
+This project is licensed under the GNU Affero General Public License v3.0. See the [LICENSE](license.txt) file for details.
 
 ---
 
-Made with ❤️ by [@kimoamer](https://github.com/kimoamer) for better payroll compliance and HR data management.
+Made with ❤️ by [Innomate LLC](https://github.com/kimoamer) for better payroll compliance and HR data management.
+
+For support or inquiries, contact: info@innomate-tech.com
