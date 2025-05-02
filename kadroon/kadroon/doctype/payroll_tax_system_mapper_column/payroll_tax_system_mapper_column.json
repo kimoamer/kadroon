@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-04-29 01:41:31.252010",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "column_name",
+  "code_field",
+  "based_on_formula",
+  "auto_fill",
+  "column_break_1",
+  "source_doctype",
+  "source_field",
+  "formula_section",
+  "formula"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Column Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "source_doctype",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Source DocType",
+   "options": "\nSalary Slip\nEmployee\nSalary Structure Assignment",
+   "read_only_depends_on": "eval:doc.auto_fill == 1"
+  },
+  {
+   "depends_on": "eval: doc.source_doctype && doc.based_on_formula !=1",
+   "description": "Select a field from the source DocType",
+   "fieldname": "source_field",
+   "fieldtype": "Autocomplete",
+   "label": "Source Field"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.based_on_formula == 1",
+   "fieldname": "formula_section",
+   "fieldtype": "Section Break",
+   "label": "Formula Builder"
+  },
+  {
+   "description": "Formula to calculate or transform the field value",
+   "fieldname": "formula",
+   "fieldtype": "Code",
+   "label": "Formula Result"
+  },
+  {
+   "default": "0",
+   "fieldname": "based_on_formula",
+   "fieldtype": "Check",
+   "label": "Value Based on Formula",
+   "read_only_depends_on": "eval:doc.auto_fill == 1"
+  },
+  {
+   "fieldname": "code_field",
+   "fieldtype": "Data",
+   "label": "Code Field",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_fill",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Auto Fill"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-05-01 19:03:40.216179",
+ "modified_by": "Administrator",
+ "module": "Kadroon",
+ "name": "Payroll Tax System Mapper Column",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

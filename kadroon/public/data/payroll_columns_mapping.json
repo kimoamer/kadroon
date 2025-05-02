@@ -1,0 +1,542 @@
+[
+  {
+    "column_name": "مسلسل",
+    "code_field": "EI005",
+    "auto_fill": true
+  },
+  {
+    "column_name": "كود الموظف",
+    "code_field": "EI010",
+    "source_doctype": "Employee",
+    "source_field": "employee"
+  },
+  {
+    "column_name": "اسم الموظف",
+    "code_field": "EI015",
+    "source_doctype": "Employee",
+    "source_field": "employee_name"
+  },
+  {
+    "column_name": "الجنسية",
+    "code_field": "EI020",
+    "source_doctype": "Employee",
+    "source_field": "nationality_code"
+  },
+  {
+    "column_name": "الرقم القومي",
+    "code_field": "EI025",
+    "source_doctype": "Employee",
+    "source_field": "national_id"
+  },
+  {
+    "column_name": "رقم جواز السفر",
+    "code_field": "EI026",
+    "source_doctype": "Employee",
+    "source_field": "passport_number"
+  },
+  {
+    "column_name": "رقم التليفون",
+    "code_field": "EI030",
+    "source_doctype": "Employee",
+    "source_field": "cell_number"
+  },
+  {
+    "column_name": "حالة تصريح العمل لغير المصريين",
+    "code_field": "EI035",
+    "source_doctype": "Employee",
+    "source_field": "work_permit_status"
+  },
+  {
+    "column_name": "رقم تصريح العمل",
+    "code_field": "EI040",
+    "source_doctype": "Employee",
+    "source_field": "work_permit_number"
+  },
+  {
+    "column_name": "الوظيفة",
+    "code_field": "EI045",
+    "source_doctype": "Employee",
+    "source_field": "designation"
+  },
+  {
+    "column_name": "اسم الجهة/الفرع",
+    "code_field": "EI055",
+    "source_doctype": "Employee",
+    "source_field": "department"
+  },
+  {
+    "column_name": "المعاملة الضريبية",
+    "code_field": "EI060",
+    "source_doctype": "Employee",
+    "based_on_formula": 1,
+    "formula": "tax_treatment_type.split('-')[0].strip()"
+  },
+  {
+    "column_name": "رقم التسجيل الضريبي لجهة العمل الأصلية",
+    "code_field": "EI065",
+    "source_doctype": "Employee",
+    "source_field": "tax_registration_number"
+  },
+  {
+    "column_name": "مدة العمل",
+    "code_field": "EI130",
+    "source_doctype": "Salary Slip",
+    "based_on_formula": 1,
+    "formula": "30 if total_working_days > 30 else total_working_days"
+  },
+  {
+    "column_name": "الحالة التأمينية",
+    "code_field": "EI070",
+    "source_doctype": "Employee",
+    "based_on_formula": true,
+    "formula": "insurance_status.split('-')[0]"
+  },
+  {
+    "column_name": "الرقم التأمينى",
+    "code_field": "EI075",
+    "source_doctype": "Employee",
+    "source_field": "insurance_number"
+  },
+  {
+    "column_name": "تاريخ الالتحاق بالتأمينات",
+    "code_field": "EI080",
+    "source_doctype": "Employee",
+    "source_field": "insurance_join_date"
+  },
+  {
+    "column_name": "قسط مدة سابقة",
+    "code_field": "EI085",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "تاريخ نهاية الخدمة",
+    "code_field": "EI090",
+    "source_doctype": "Employee",
+    "source_field": "relieving_date"
+  },
+  {
+    "column_name": "تاريخ انتهاء الاشتراك من التأمينات الاجتماعية",
+    "code_field": "EI095",
+    "source_doctype": "Employee",
+    "source_field": "insurance_end_date"
+  },
+  {
+    "column_name": "الأجر الشامل",
+    "code_field": "EI100",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "بدلات غير خاضعة تأمينيأ",
+    "code_field": "EI105",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "الأجر التأميني",
+    "code_field": "EI110",
+    "auto_fill": true
+  },
+  {
+    "column_name": "حالة التأمين  الصحي الشامل",
+    "code_field": "EI115",
+    "source_doctype": "Employee",
+    "based_on_formula": true,
+    "formula": "health_insurance_status.split('-')[0]"
+  },
+  {
+    "column_name": "عدد الزوجات الغير عاملات (التأمين الصحي الشامل)",
+    "code_field": "EI120",
+    "source_doctype": "Employee",
+    "source_field": "non_working_spouse_count"
+  },
+  {
+    "column_name": "عدد المعالين (التأمين الصحي  الشامل)",
+    "code_field": "EI125",
+    "source_doctype": "Employee",
+    "source_field": "dependents_count"
+  },
+  {
+    "column_name": "المرتب الأساسي",
+    "code_field": "DTE160",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "مكافات وحوافز/أجر إضافي/منح",
+    "code_field": "DTE170",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "علاوات خاصة معفاة",
+    "code_field": "DTE180",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "علاوات خاصة خاضعة",
+    "code_field": "DTE175",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "عمولات",
+    "code_field": "DTE190",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "نصيب العامل في الأرباح",
+    "code_field": "DTE230",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "مقابل الخدمة",
+    "code_field": "DTE235",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "البقشيش",
+    "code_field": "DTE260",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "مرتبات ومكافات رؤساء اعضاء مجلس الادارة (مقابل العمل الإداري)",
+    "code_field": "DTE240",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "المقابل النقدى لرصيد الاجازات أثناء الخدمة",
+    "code_field": "DTE245",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "مكافأة نهاية الخدمة الخاضعة",
+    "code_field": "DTE250",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "مبالغ منصرفة بقوانين خاصة (الجزء المعفي منها)",
+    "code_field": "DTE255",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "إضافات وبدلات اخرى خاضعة",
+    "code_field": "DTE265",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "ما تحملته المنشاة من ضريبة مرتبات",
+    "code_field": "DTE270",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "ما تحملته المنشأة من حصة العامل في التأمينات الاجتماعية",
+    "code_field": "DTE275",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "مبالغ خاضعة منصرفة بصورة ربع سنوية",
+    "code_field": "DTE280",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "مبالغ خاضعة منصرفة بصورة نصف سنوية",
+    "code_field": "DTE285",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "مبالغ خاضعة منصرفة بصورة  سنوية",
+    "code_field": "DTE290",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "مزايا: السيارات",
+    "code_field": "DTE200",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "مزايا: الهواتف المحمولة",
+    "code_field": "DTE205",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "مزايا: قروض وسلف",
+    "code_field": "DTE210",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "مزايا: التأمين على الحياة (حصة صاحب العمل)",
+    "code_field": "DTE215",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "مزايا: اسهم الشركة داخل مصر او خارج مصر",
+    "code_field": "DTE220",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "مزايا أخرى",
+    "code_field": "DTE225",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "اجمالى الاستحقاقات",
+    "code_field": "DTE295",
+    "auto_fill": true
+  },
+  {
+    "column_name": "حصة العامل فى التأمينات الإجتماعية  والمعاشات",
+    "code_field": "DAE405",
+    "auto_fill": true
+  },
+  {
+    "column_name": "حصة العامل المستقطعة في التأمين الصحي الشامل",
+    "code_field": "DAE410",
+    "auto_fill": true
+  },
+  {
+    "column_name": "مبالغ معفاة  بقوانين خاصة",
+    "code_field": "DAE415",
+    "auto_fill": true
+  },
+  {
+    "column_name": "علاوات خاصة معفاة",
+    "code_field": "DAE420",
+    "auto_fill": true
+  },
+  {
+    "column_name": "العلاوة الاجتماعية/الإضافية لجهات حكومية و ق.ع. وغير خاضع للخدمة المدنية",
+    "code_field": "DAE425",
+    "auto_fill": true
+  },
+  {
+    "column_name": "الاعفاء الشخصى",
+    "code_field": "DAE430",
+    "auto_fill": true
+  },
+  {
+    "column_name": "اقساط (مدة سابقة/اعارة/اعتبارية)",
+    "code_field": "DAE435",
+    "auto_fill": true
+  },
+  {
+    "column_name": "نصيب العامل في الأرباح",
+    "code_field": "DAE440",
+    "auto_fill": true
+  },
+  {
+    "column_name": "اشتراكات العاملين فى صناديق التامين التى تنشاء طبقا لاحكام ق 54 لسنة 75",
+    "code_field": "DAE450",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "أقساط التأمين على حياة الممول لمصلحتة ومصلحةزوجته وأولاده القصر",
+    "code_field": "DAE455",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "أقساط التأمين الصحي",
+    "code_field": "DAE460",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "أقساط تأمين لإستحقاق معاش",
+    "code_field": "DAE465",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "إجمالي اشتراكات صناديق التأمين",
+    "code_field": "DAE470",
+    "auto_fill": true
+  },
+  {
+    "column_name": "اجمالى الاستقطاعات",
+    "code_field": "DAE475",
+    "auto_fill": true
+  },
+  {
+    "column_name": "صافى الدخل (وعاء الفتره)",
+    "code_field": "TC505",
+    "auto_fill": true
+  },
+  {
+    "column_name": "الوعاء السنوى",
+    "code_field": "TC510",
+    "auto_fill": true
+  },
+  {
+    "column_name": "الضريبة  المستحقة عن الفترة للعمالة الاصلية",
+    "code_field": "TC515",
+    "auto_fill": true
+  },
+  {
+    "column_name": "الضريبة  المستحقة عن الفترة للعمالة المدرجه بنموذج 3 مرتبات",
+    "code_field": "TC520",
+    "auto_fill": true
+  },
+  {
+    "column_name": "الضريبة المستحقة عن الفترة للعمالة المدرجه بنموذج 2 مرتبات",
+    "code_field": "TC525",
+    "auto_fill": true
+  },
+  {
+    "column_name": "اجمالى الضريبة المستحقة عن جميع انواع العمالة",
+    "code_field": "TC530",
+    "auto_fill": true
+  },
+  {
+    "column_name": "الضريبة المحتسبة عن الفترة",
+    "code_field": "END705",
+    "auto_fill": true
+  },
+  {
+    "column_name": "الضريبة المحتسبة عن الفترات السابقة للمعاملات الضريبية 1 و4 و5 و6 و7",
+    "code_field": "TC535",
+    "auto_fill": true
+  },
+  {
+    "column_name": "الضريبة المحتسبة عن الفترة للمعاملات الضريبية 1 و4 و5 و6 و7",
+    "code_field": "TC540",
+    "auto_fill": true
+  },
+  {
+    "column_name": "الضريبة المحتسبة عن الفترات السابقة للمعاملة ضريبية 2",
+    "code_field": "TC545",
+    "auto_fill": true
+  },
+  {
+    "column_name": "الضريبة المحتسبة عن الفترة للمعاملة ضريبية 2",
+    "code_field": "TC550",
+    "auto_fill": true
+  },
+  {
+    "column_name": "الضريبة المحتسبة عن الفترات السابقة للمعاملة ضريبية 3",
+    "code_field": "TC555",
+    "auto_fill": true
+  },
+  {
+    "column_name": "الضريبة المحتسبة عن الفترة للمعاملة ضريبية 3",
+    "code_field": "TC560",
+    "auto_fill": true
+  },
+  {
+    "column_name": "صافي الأجر النهائي",
+    "code_field": "TC565",
+    "auto_fill": true
+  },
+  {
+    "column_name": "مشاركه اجتماعيه استقطاع لصندوق الشهداء وما فى حكمها",
+    "code_field": "NAD610",
+    "auto_fill": true
+  },
+  {
+    "column_name": "دعم ذوي الهمم (قانون 200 لسنة 2020)",
+    "code_field": "CLD825",
+    "auto_fill": true
+  },
+  {
+    "column_name": "اضافات: قيمة السلفة/قروض",
+    "code_field": "NAD615",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "اضافات: قيمة مكافأة نهاية الخدمة الغير خاضعة",
+    "code_field": "NAD620",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "اضافات: قيمة رصيد الأجازات الغير خاضعة",
+    "code_field": "NAD625",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "اضافات أخرى",
+    "code_field": "NAD630",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "استقطاعات: نفقة",
+    "code_field": "NAD635",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "استقطاعات: قيمة قسط السلفة/القرض",
+    "code_field": "NAD640",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "استقطاعات: اشتراكات نقابات/أندية",
+    "code_field": "NAD645",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "استقطاعات: جزاءات",
+    "code_field": "NAD650",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "استقطاعات: قيمة قسط بوليصة التأمين على الحياة",
+    "code_field": "NAD655",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "استقطاعات أخرى",
+    "code_field": "NAD660",
+    "source_doctype": "",
+    "source_field": ""
+  },
+  {
+    "column_name": "حصة الشركة في التأمينات الاجتماعية",
+    "code_field": "NAD665",
+    "auto_fill": true
+  },
+  {
+    "column_name": "حصة الشركة في التأمين الصحي الشامل",
+    "code_field": "CLD805",
+    "auto_fill": true
+  },
+  {
+    "column_name": "المساهمة فى صندوق الشهداء",
+    "code_field": "CLD810",
+    "auto_fill": true
+  },
+  {
+    "column_name": "المبالغ المحولة فعلياً",
+    "code_field": "CLD820"
+  }
+]
